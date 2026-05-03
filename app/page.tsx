@@ -1,8 +1,10 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { DUMMY_FUNDS } from "@/lib/dummyData";
 import FundCard from "@/components/FundCard/FundCard";
 
 export default function Home() {
+  const router = useRouter();
   return (
     <>
       <style>{`
@@ -92,7 +94,7 @@ export default function Home() {
             <FundCard
               key={fund.cik}
               fund={fund}
-              onClick={() => console.log(fund.cik)}
+              onClick={() => router.push(`/funds/${fund.cik}`)}
             />
           ))}
         </div>
