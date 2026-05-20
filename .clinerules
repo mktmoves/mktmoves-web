@@ -1,0 +1,43 @@
+# MktMoves Web — Cline Rules
+
+## Memory Bank — Read First, Always
+
+At the start of EVERY task, before writing any code or making any plan,
+read these files in order:
+
+1. memory-bank/projectBrief.md
+2. memory-bank/techContext.md
+3. memory-bank/designSystem.md
+4. memory-bank/codebaseStructure.md
+5. memory-bank/activeContext.md
+
+Do not skip any of these. Do not proceed until all five are read.
+
+## Critical Constraints
+
+- Do NOT use the terminal to read or scan any files.
+- Do NOT open or read `references/homepage.html`. All design decisions
+  from that file have been extracted into memory-bank/designSystem.md.
+  That file is the authoritative design reference.
+- Do NOT install any new npm packages without explicit instruction.
+- Do NOT use Tailwind classes. Plain CSS only, using CSS variables.
+- Do NOT use any UI component library (no Radix, no shadcn, no Headless UI).
+- Do NOT modify these files: app/api/waitlist/route.ts, lib/supabase.ts,
+  .env.local, .env.example, next.config.ts, tsconfig.json.
+
+## Scope Discipline
+
+- Only build what the current prompt asks for. Do not add features,
+  pages, or components that were not requested.
+- If a task is ambiguous, state the ambiguity and ask before writing code.
+- After completing a task, update memory-bank/activeContext.md with what
+  was built and what the next task is.
+
+## Code Standards
+
+- TypeScript strict mode. No `any` types.
+- All colors via CSS variables. No hardcoded hex values in components.
+- All spacing via CSS variables or multiples of 4px.
+- IBM Plex Mono for all numerical data only. IBM Plex Sans for everything else.
+- Server components by default. Add "use client" only when required
+  (search inputs, interactive state).
