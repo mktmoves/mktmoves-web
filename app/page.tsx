@@ -49,10 +49,10 @@ export default async function Home() {
             <div className="stat-value">$48.2T</div>
           </div>
         </div>
-
-        {/* Search bar + table rendered by client component */}
-        <SearchableTable funds={funds} fetchFailed={fetchFailed} />
       </section>
+
+      {/* Search bar + table rendered by client component */}
+      <SearchableTable funds={funds} fetchFailed={fetchFailed} />
     </>
   );
 }

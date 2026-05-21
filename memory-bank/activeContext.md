@@ -2,11 +2,36 @@
 
 ## Current Status
 
-Homepage is COMPLETE. All files built and verified.
+Homepage is COMPLETE. Two CSS layout fixes applied (search bar width alignment + gap before Superinvestors heading).
 
 ---
 
-## What Was Built This Session
+## What Was Fixed This Session
+
+### Layout Fix: Search bar width mismatch + missing gap (2026-05-21)
+
+**Root cause:** `SearchableTable` was rendered inside `.hero`, so
+the search bar inherited the hero's 32px padding, while `.table-section`
+applied its own 32px padding on top — causing the table to be narrower
+than the search bar (double-padded vs single-padded).
+
+**Changes:**
+1. **app/page.tsx** — Moved `<SearchableTable>` outside the `.hero`
+   `<section>`, making it a sibling instead of a child.
+2. **app/components/SearchableTable.tsx** — Wrapped the search bar
+   `<div className="search-bar">` in a new `<div className="search-section">`
+   to give it independent width constraints.
+3. **app/globals.css** — Added `.search-section` rule
+   (`max-width: var(--max-width); margin: 0 auto; padding: 0 32px`)
+   matching the layout pattern used by `.hero`, `.table-section`, `.nav-inner`,
+   and `.footer-inner`. Updated `.table-section` padding-top from `0` to `20px`
+   for the gap between the search bar and the "Superinvestors" heading.
+   Added `.search-section` to the mobile responsive breakpoint
+   (`padding: 0 20px`).
+
+---
+
+## What Was Built Previously
 
 ### Files Created
 - **lib/api.ts** — `Fund` interface + `getFunds()` with ISR revalidation (3600s)

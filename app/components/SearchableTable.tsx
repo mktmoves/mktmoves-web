@@ -64,32 +64,34 @@ export default function SearchableTable({ funds, fetchFailed }: SearchableTableP
 
   return (
     <>
-      {/* Search bar — sits in the hero area visually, but logically part of this client component */}
-      <div className="search-bar">
-        <span className="search-icon">
-          {/* Magnifying glass SVG icon */}
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <circle cx="11" cy="11" r="8" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </span>
-        <input
-          type="text"
-          className="search-input"
-          placeholder="Search funds by name or CIK... e.g. Berkshire, 0001067983"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <span className="search-kbd">⌘</span>
+      {/* Search bar — constrained to match hero and table section widths */}
+      <div className="search-section">
+        <div className="search-bar">
+          <span className="search-icon">
+            {/* Magnifying glass SVG icon */}
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </span>
+          <input
+            type="text"
+            className="search-input"
+            placeholder="Search funds by name or CIK... e.g. Berkshire, 0001067983"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+          />
+          <span className="search-kbd">⌘</span>
+        </div>
       </div>
 
       {/* Table section */}
