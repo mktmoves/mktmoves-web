@@ -142,7 +142,7 @@ export default function SearchableTable({ funds, fetchFailed }: SearchableTableP
                         {fund.top_5_tickers && fund.top_5_tickers.length > 0 ? (
                           <div className="ticker-pills">
                             {fund.top_5_tickers.map((ticker) => (
-                              <span key={ticker} className="ticker-pill">
+                              <span key={`${fund.cik}-${ticker}`} className="ticker-pill">
                                 {ticker}
                               </span>
                             ))}
