@@ -63,6 +63,30 @@ than the search bar (double-padded vs single-padded).
 
 ---
 
+## What Was Done This Session
+
+### Security cleanup: Remove waitlist/Supabase functionality (2026-06-13)
+
+**Why:** Waitlist feature is no longer needed. The Supabase client and waitlist
+API route were the only files connecting to Supabase. Removing them eliminates
+the service role key dependency from the codebase.
+
+**Changes:**
+1. **Deleted lib/supabase.ts** — Supabase client using service role key
+2. **Deleted app/api/waitlist/route.ts** — POST endpoint for waitlist signups
+3. **Deleted app/api/waitlist/ directory** — now empty
+4. **Deleted app/api/ directory** — now empty (waitlist was the only API route)
+5. **.env.example** — Removed `NEXT_PUBLIC_SUPABASE_ANON_KEY=` line (unused
+   variable). Kept `NEXT_PUBLIC_SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY`.
+
+**No other files were modified.** No remaining file imported from supabase.ts
+or referenced the waitlist route.
+
+**Note:** `@supabase/supabase-js` package remains in package.json as an unused
+dependency — removal was out of scope for this task.
+
+---
+
 ## What Comes Next
 
 1. **Fund detail page** — app/funds/[cik]/page.tsx
