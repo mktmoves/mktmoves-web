@@ -533,3 +533,9 @@ select {
     text-align: center;
   }
 }
+
+/* ── Contact Page ──────────────────────────────────────────────── */
+
+.contact-link:hover {
+  color: var(--accent-hover);
+}

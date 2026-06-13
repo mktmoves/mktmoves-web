@@ -65,6 +65,63 @@ than the search bar (double-padded vs single-padded).
 
 ## What Was Done This Session
 
+### About, Contact pages + spacing tightening + nav/footer link fixes (2026-06-13)
+
+**What:** Four changes in one session:
+
+1. **Tightened spacing on `/privacy` and `/terms`** — Reduced container top
+   padding (48px → 32px), effective date margin (48 → 32), section paddingBottom
+   (32 → 22), h2 margin (32px 0 12px → 20px 0 8px), body paragraph fontSize
+   (15 → 14) and lineHeight (1.7 → 1.6).
+
+2. **Created `app/about/page.tsx`** — Static server component with profile
+   block (circular photo via next/image, name "Sanket Chavan", title "Data
+   Engineer", LinkedIn + sanketchavan.com links), followed by h1 "About
+   MktMoves" and three content sections: The Project, The Data, The Builder.
+
+3. **Created `app/contact/page.tsx`** — Static server component with h1
+   "Contact", single "Get in Touch" section, and mailto link to
+   admin@mktmoves.com using `.contact-link` class for hover state.
+
+4. **Fixed nav and footer links in `app/layout.tsx`** — Nav "About" link
+   changed from `href="#"` to `href="/about"`. Footer Company column "About"
+   and "Contact" changed from `href="#"` to `/about` and `/contact`.
+
+**Files created:** `app/about/page.tsx`, `app/contact/page.tsx`
+**Files modified:** `app/privacy/page.tsx`, `app/terms/page.tsx`,
+`app/layout.tsx`, `app/globals.css` (added `.contact-link:hover` rule)
+
+**Build:** Verified via `next build` — all 4 routes (`/about`, `/contact`,
+`/privacy`, `/terms`) compile and generate as static pages (○ marker).
+
+---
+
+### Static legal pages: Privacy Policy + Terms of Service (2026-06-13)
+
+**What:** Created two new static pages at `/privacy` and `/terms`.
+
+**Files created:**
+1. **app/privacy/page.tsx** — Privacy Policy (8 sections). Pure static server
+   component with inline styles using CSS variables. Includes mailto: link
+   for admin@mktmoves.com in accent color.
+2. **app/terms/page.tsx** — Terms of Service (10 sections). Same structure
+   and styling approach as the privacy page.
+
+**Files modified:**
+3. **app/layout.tsx** — Updated footer bottom bar links from `href="#"` to
+   `href="/privacy"` and `href="/terms"` so the existing footer links now
+   point to the real pages.
+
+**Design:** Both pages use the existing design system — CSS variables for all
+colors, IBM Plex Sans font, dark theme. No Tailwind, no hardcoded hex values,
+no client components, no API calls. Nav and Footer render automatically from
+the root layout.
+
+**Build:** Verified via `next build` — both routes compile and generate as
+static pages (○ marker in build output).
+
+---
+
 ### Security cleanup: Remove waitlist/Supabase functionality (2026-06-13)
 
 **Why:** Waitlist feature is no longer needed. The Supabase client and waitlist
