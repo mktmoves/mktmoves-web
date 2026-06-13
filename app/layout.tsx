@@ -40,7 +40,7 @@ function Nav() {
           <a href="/" className="nav-link nav-link-active">
             Home
           </a>
-          <a href="#" className="nav-link">
+          <a href="/about" className="nav-link">
             About
           </a>
         </div>
@@ -79,8 +79,8 @@ function Footer() {
           {/* Company column */}
           <div>
             <div className="footer-col-heading">Company</div>
-            <a href="#" className="footer-link">About</a>
-            <a href="#" className="footer-link">Contact</a>
+            <a href="/about" className="footer-link">About</a>
+            <a href="/contact" className="footer-link">Contact</a>
           </div>
         </div>
 
@@ -91,7 +91,7 @@ function Footer() {
             SEC data sourced from EDGAR. Not investment advice.
           </span>
           <span className="footer-bottom-right">
-            <a href="#">Privacy Policy</a> · <a href="#">Terms of Service</a>
+            <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms of Service</a>
           </span>
         </div>
       </div>
