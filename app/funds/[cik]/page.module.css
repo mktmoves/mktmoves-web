@@ -1,0 +1,173 @@
+.nav {
+  width: 100%;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.navInner {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}
+
+.logoAccent {
+  color: var(--accent);
+}
+
+.navLinks {
+  display: flex;
+  gap: 24px;
+}
+
+.navLink {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.navLinkActive {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.body {
+  padding-top: 40px;
+  padding-bottom: 64px;
+}
+
+.backBtn {
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+.backBtn:hover {
+  color: var(--text-secondary);
+}
+
+.fundName {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.4px;
+  margin-bottom: 6px;
+}
+
+.fundMeta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.heroStats {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.statBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.statLabel {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+}
+
+.statValue {
+  font-family: var(--font-mono);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+.sectionTitle {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableWrap {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
+}
+
+.th {
+  background: var(--bg-elevated);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  padding: 10px 16px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.thRight {
+  composes: th;
+  text-align: right;
+}
+
+.td {
+  font-size: 14px;
+  color: var(--text-primary);
+  padding: 10px 16px;
+}
+
+.tdRight {
+  composes: td;
+  text-align: right;
+}
+
+.tdMono {
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.tdRank {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-muted);
+  text-align: right;
+  width: 32px;
+  padding: 10px 16px;
+}
+
+.tdMuted {
+  color: var(--text-muted);
+}
+
+.row:hover td {
+  background: var(--bg-elevated);
+  transition: background 0.15s;
+}
